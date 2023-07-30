@@ -15,8 +15,8 @@ The idea is each step would require a positive `CLIPTextEncodeA1111` node, a neg
 ## Syntax
 
 * Alternating Words `[foo|bar]`: step 0 is `foo`, step 1 is `bar`, step 2 is `foo` and so on. Three or more words are also supported.
-* Prompt Editing `[foo|bar|0.3]`: Uses `foo` for the 30% of the steps and `bar` for the remaining steps
-	* Warning: This is incompatible with ComfyUI! It uses `|` instead of `:` to avoid conflict with the embedding syntax of ComfyUI.
+* Prompt Editing `[foo|bar|0.3]`: Uses `foo` for the first 30% of the steps and `bar` for the remaining steps
+	* Warning: This is incompatible with A1111! It uses `|` instead of `:` to avoid conflict with the embedding syntax of ComfyUI.
 	* Detection algorithm: If it's three words and the last one is a number, it's Prompt Editing. Otherwise it's Alternating Words
 * Recursion is supported. Example: `[[foo|bar]|baz|0.6]` means using `foo` and `bar` every other step for the first 60% of steps, then use `baz` for the remaining steps
 
